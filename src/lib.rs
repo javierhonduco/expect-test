@@ -282,7 +282,7 @@ impl Expect {
         // if trimmed == actual {
         //     return;
         // }
-        Runtime::fail_expect(self, &trimmed, actual);
+        Runtime::fail_expect(self, &self.data, actual);
     }
     /// Checks if this expect is equal to `format!("{:#?}", actual)`.
     pub fn assert_debug_eq(&self, actual: &impl fmt::Debug) {
