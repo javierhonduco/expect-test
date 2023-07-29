@@ -278,10 +278,10 @@ impl StrLitKind {
 impl Expect {
     /// Checks if this expect is equal to `actual`.
     pub fn assert_eq(&self, actual: &str) {
-        let trimmed = self.trimmed();
-        if trimmed == actual {
-            return;
-        }
+        // let trimmed = self.trimmed();
+        // if trimmed == actual {
+        //     return;
+        // }
         Runtime::fail_expect(self, &trimmed, actual);
     }
     /// Checks if this expect is equal to `format!("{:#?}", actual)`.
