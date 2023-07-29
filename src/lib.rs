@@ -279,9 +279,9 @@ impl Expect {
     /// Checks if this expect is equal to `actual`.
     pub fn assert_eq(&self, actual: &str) {
         // let trimmed = self.trimmed();
-        // if trimmed == actual {
-        //     return;
-        // }
+        if self.data == actual {
+            return;
+        }
         Runtime::fail_expect(self, &self.data, actual);
     }
     /// Checks if this expect is equal to `format!("{:#?}", actual)`.
